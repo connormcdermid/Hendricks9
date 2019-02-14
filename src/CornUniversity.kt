@@ -5,3 +5,8 @@
  * @date 11-02-19
  * @extra
  **/
+
+fun main() {
+    val eyeah = 'c'
+    print(eyeah)
+}
