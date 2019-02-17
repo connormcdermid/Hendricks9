@@ -185,15 +185,15 @@ public class PromotionalPromo {
         System.out.println("Your cart:");
         System.out.println("# Product                         Unit Price  Quantity  Total Price");
         if (moscowHoodie != 0)
-            System.out.println("1 Progress Moscow Hoodie          $69.99      " + moscowHoodie + "         $" + moscowHoodie * 69.99);
+            System.out.println("1 Progress Moscow Hoodie          $69.99      " + moscowHoodie + "         $" + df.format(moscowHoodie * 69.99));
         if (moscowZipper != 0)
-            System.out.println("2 Progress Moscow Zipped Hoodie   $74.99      " + moscowZipper + "         $" + moscowZipper * 74.99);
+            System.out.println("2 Progress Moscow Zipped Hoodie   $74.99      " + moscowZipper + "         $" + df.format(moscowZipper * 74.99));
         if (hartsShirt != 0)
-            System.out.println("3 In Our Harts Shirt              $74.99      " + hartsShirt + "         $" + hartsShirt * 64.99);
+            System.out.println("3 In Our Harts Shirt              $74.99      " + hartsShirt + "         $" + df.format(hartsShirt * 64.99));
         if (wildBoy != 0)
-            System.out.println("4 «le garçon sauvage» Sweatpants  $89.99      " + wildBoy + "         $" + wildBoy * 89.99);
+            System.out.println("4 «le garçon sauvage» Sweatpants  $89.99      " + wildBoy + "         $" + df.format(wildBoy * 89.99);
         if (pugetProgress != 0)
-            System.out.println("5 Puget Progress Hoodie           $79.99      " + pugetProgress + "         $" + pugetProgress * 79.99);
+            System.out.println("5 Puget Progress Hoodie           $79.99      " + pugetProgress + "         $" + df.format(pugetProgress * 79.99));
         // Calculates, rounds and displays the total price of the items
         System.out.println("Total Price: $" + df.format((moscowHoodie * 69.99)+(moscowZipper * 74.99)+(hartsShirt * 64.99)+(wildBoy * 89.99)+(pugetProgress * 79.99)));
         divider(10);
