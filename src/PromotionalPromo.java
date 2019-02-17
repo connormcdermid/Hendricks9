@@ -60,7 +60,7 @@ public class PromotionalPromo {
                 break;
             case "2":
                 divider(10);
-
+                products();
                 break;
             case "3":
                 divider(10);
@@ -71,9 +71,9 @@ public class PromotionalPromo {
                 System.exit(0);
             default:
                 System.out.println("That was not a recognized input. Please try again.");
-                menu();
                 break;
         }
+        menu();
     }
 
     // Displays our esteemed employees
@@ -84,5 +84,42 @@ public class PromotionalPromo {
         System.out.println(" Head of Production: Agranya Ketha");
         System.out.println(" Royalties and like nothing else: Harish \"Chris Hart\" Sundar");
         divider(10);
+    }
+
+    // Displays our products and allows user to buy them
+    private static void products() {
+        System.out.println("# Product                         Description                                  Price");
+        System.out.println("1 Progress Moscow Hoodie          Progress Moscow hoodie. Red and white.       $69.99");
+        System.out.println("2 Progress Moscow Zipped Hoodie   Progress Moscow hoodie with a zipper. Black  $74.99");
+        System.out.println("                                  and white.");
+        System.out.println("3 In Our Harts Shirt              Commemorative design long-sleeve shirt for   $64.99");
+        System.out.println("                                  Chris Hart. Black, red and green.");
+        System.out.println("4 «le garçon sauvage» Sweatpants  The iconic French I students' hero. Blue,    $89.99");
+        System.out.println("                                  white and red.");
+        System.out.println("5 Puget Progress Hoodie           A collaboration between Project Mathnasium   $79.99");
+        System.out.println("                                  and Progress Fashions. Grey.");
+        System.out.println("Enter the number of the item you want to order. Type \"exit\" to go back to the menu.");
+        // Gets input from user
+        String input = kbd.next();
+        switch (input) {
+            case "1":
+
+                break;
+            case "2":
+
+                break;
+            case "3":
+
+                break;
+            case "4":
+
+                break;
+            case "5":
+
+                break;
+            case "exit":
+                divider(10);
+                break;
+        }
     }
 }
