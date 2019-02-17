@@ -191,7 +191,7 @@ public class PromotionalPromo {
         if (hartsShirt != 0)
             System.out.println("3 In Our Harts Shirt              $74.99      " + hartsShirt + "         $" + df.format(hartsShirt * 64.99));
         if (wildBoy != 0)
-            System.out.println("4 «le garçon sauvage» Sweatpants  $89.99      " + wildBoy + "         $" + df.format(wildBoy * 89.99);
+            System.out.println("4 «le garçon sauvage» Sweatpants  $89.99      " + wildBoy + "         $" + df.format(wildBoy * 89.99));
         if (pugetProgress != 0)
             System.out.println("5 Puget Progress Hoodie           $79.99      " + pugetProgress + "         $" + df.format(pugetProgress * 79.99));
         // Calculates, rounds and displays the total price of the items
