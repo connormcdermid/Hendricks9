@@ -13,6 +13,12 @@ public class PromotionalPromo {
     // Global variables are bad but I'm lazy
     public static Scanner kbd = new Scanner(System.in);
 
+    private static int moscowHoodie = 0;
+    private static int moscowZipper = 0;
+    private static int hartsShirt = 0;
+    private static int wildBoy = 0;
+    private static int pugetProgress = 0;
+
     public static void main(String[] args) {
         divider(14);
         // Here's those "nested loops" as desired for the logo
@@ -101,25 +107,43 @@ public class PromotionalPromo {
         System.out.println("Enter the number of the item you want to order. Type \"exit\" to go back to the menu.");
         // Gets input from user
         String input = kbd.next();
+        // The number of the item the user wants to buy
+        int choice = 0;
         switch (input) {
             case "1":
-
+                choice = 1;
                 break;
             case "2":
-
+                choice = 2;
                 break;
             case "3":
-
+                choice = 3;
                 break;
             case "4":
-
+                choice = 4;
                 break;
             case "5":
-
+                choice = 5;
                 break;
             case "exit":
                 divider(10);
-                break;
+                return;
         }
+        // Gets the quantity the user wants to purchase
+        System.out.println("How many would you like?");
+        int quantity = kbd.nextInt();
+            addToCart(choice, quantity);
+        System.out.println("Would you like to purchase another item?");
+    }
+
+    // Adds the selected item in its quantity to the cart
+    private static void addToCart(int item, int quantity) {
+        // If this is called, that most likely means that the return; statement on line 130 probably didn't work
+        if (item == 0) {
+            System.out.println("An error has occurred. Ask for assistance.");
+            System.out.println("Error: addToCart.choiceNotInitialized");
+            System.exit(2);
+        }
+
     }
 }
