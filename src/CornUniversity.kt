@@ -1,4 +1,5 @@
 import java.util.Scanner
+import kotlin.system.exitProcess
 
 /**
  * @author Frank Gomes
@@ -8,11 +9,11 @@ import java.util.Scanner
  * @extra
  **/
 
+var kbd = Scanner(System.`in`)
 
 fun main() {
-    var kbd = Scanner(System.`in`)
     println("Which college would you like to see?\n 1. MIT\n 2. Harvard\n 3. CCM")
-    var input = kbd.nextInt()
+    val input = kbd.nextInt()
     when (input) {
         1 -> mit()
         2 -> harvard()
@@ -24,15 +25,30 @@ fun main() {
     }
 }
 
-fun mit() {
-    print("Massachusetts Institute of Technology\n2019 Enrollment: 2,024\nPercentage of women: 43%\nUndergraduate tuition: $45,278\nFun fact: Professor Anant Agarwal has a nice mustache.")
+fun anotherCollege() {
+    println("Would you like to see another college?")
+    val input= kbd.next()
+    when (input) {
+        "y", "Y", "yes" -> main()
+        "n", "N", "no" -> exitProcess(0)
+        else -> {
+            println("That was not a recognized input.")
+            anotherCollege()
+        }
+    }
+}
 
+fun mit() {
+    println("Massachusetts Institute of Technology\n2019 Enrollment: 2,024\nPercentage of women: 43%\nUndergraduate tuition: $45,278\nFun fact: Professor Anant Agarwal has a nice mustache.")
+    anotherCollege()
 }
 
 fun harvard() {
-
+    println()
+    anotherCollege()
 }
 
 fun ccm() {
-
+    println()
+    anotherCollege()
 }
