@@ -6,7 +6,7 @@ import kotlin.system.exitProcess
  * @version 0.1
  * @lab MidYear Coding OPTION 2
  * @date 11-02-19
- * @extra
+ * @extra i wrote it in kotlin
  **/
 
 var kbd = Scanner(System.`in`)
