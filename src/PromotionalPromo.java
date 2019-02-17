@@ -132,8 +132,13 @@ public class PromotionalPromo {
         // Gets the quantity the user wants to purchase
         System.out.println("How many would you like?");
         int quantity = kbd.nextInt();
-            addToCart(choice, quantity);
+        // calls the addToCart function with the desired quantity
+        addToCart(choice, quantity);
         System.out.println("Would you like to purchase another item?");
+        input = kbd.next();
+        if (input.equals("yes") || input.equals("y") || input.equals("Yes") || input.equals("Y"))
+            products();
+        divider(10);
     }
 
     // Adds the selected item in its quantity to the cart
@@ -143,6 +148,24 @@ public class PromotionalPromo {
             System.out.println("An error has occurred. Ask for assistance.");
             System.out.println("Error: addToCart.choiceNotInitialized");
             System.exit(2);
+        }
+        // Adds the quantity to the appropriate item's int
+        switch (item) {
+            case 1:
+                moscowHoodie += quantity;
+                break;
+            case 2:
+                moscowZipper += quantity;
+                break;
+            case 3:
+                hartsShirt += quantity;
+                break;
+            case 4:
+                wildBoy += quantity;
+                break;
+            case 5:
+                pugetProgress += quantity;
+                break;
         }
 
     }
