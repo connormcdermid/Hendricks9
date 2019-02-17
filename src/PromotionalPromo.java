@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,7 @@ public class PromotionalPromo {
     // Global variables are bad but I'm lazy
     public static Scanner kbd = new Scanner(System.in);
 
+    // Quantities of each item
     private static int moscowHoodie = 0;
     private static int moscowZipper = 0;
     private static int hartsShirt = 0;
@@ -70,10 +72,11 @@ public class PromotionalPromo {
                 break;
             case "3":
                 divider(10);
-
+                cart();
                 break;
             case "4":
                 System.out.println("Goodbye, and thank you for shopping with Progress Fashions.");
+                divider(14);
                 System.exit(0);
             default:
                 System.out.println("That was not a recognized input. Please try again.");
@@ -95,7 +98,8 @@ public class PromotionalPromo {
     // Displays our products and allows user to buy them
     private static void products() {
         System.out.println("# Product                         Description                                  Price");
-        System.out.println("1 Progress Moscow Hoodie          Progress Moscow hoodie. Red and white.       $69.99");
+        System.out.println("1 Progress Moscow Hoodie          The classic Progress Moscow hoodie. Red and  $69.99");
+        System.out.println("                                  white.");
         System.out.println("2 Progress Moscow Zipped Hoodie   Progress Moscow hoodie with a zipper. Black  $74.99");
         System.out.println("                                  and white.");
         System.out.println("3 In Our Harts Shirt              Commemorative design long-sleeve shirt for   $64.99");
@@ -126,7 +130,6 @@ public class PromotionalPromo {
                 choice = 5;
                 break;
             case "exit":
-                divider(10);
                 return;
         }
         // Gets the quantity the user wants to purchase
@@ -138,7 +141,6 @@ public class PromotionalPromo {
         input = kbd.next();
         if (input.equals("yes") || input.equals("y") || input.equals("Yes") || input.equals("Y"))
             products();
-        divider(10);
     }
 
     // Adds the selected item in its quantity to the cart
@@ -168,5 +170,32 @@ public class PromotionalPromo {
                 break;
         }
 
+    }
+
+    // Displays the user's cart
+    private static void cart() {
+        // For alleviating any issues with places in total price
+        DecimalFormat df = new DecimalFormat("###,###.###");
+        // Checks if the cart is empty and displays a special message if so.
+        if (moscowHoodie == 0 && moscowZipper == 0 & hartsShirt == 0 & wildBoy == 0 & pugetProgress == 0) {
+            System.out.println("Your cart is empty.");
+            return;
+        }
+        // Displays all the items to purchase
+        System.out.println("Your cart:");
+        System.out.println("# Product                         Unit Price  Quantity  Total Price");
+        if (moscowHoodie != 0)
+            System.out.println("1 Progress Moscow Hoodie          $69.99      " + moscowHoodie + "         $" + moscowHoodie * 69.99);
+        if (moscowZipper != 0)
+            System.out.println("2 Progress Moscow Zipped Hoodie   $74.99      " + moscowZipper + "         $" + moscowZipper * 74.99);
+        if (hartsShirt != 0)
+            System.out.println("3 In Our Harts Shirt              $74.99      " + hartsShirt + "         $" + hartsShirt * 64.99);
+        if (wildBoy != 0)
+            System.out.println("4 «le garçon sauvage» Sweatpants  $89.99      " + wildBoy + "         $" + wildBoy * 89.99);
+        if (pugetProgress != 0)
+            System.out.println("5 Puget Progress Hoodie           $79.99      " + pugetProgress + "         $" + pugetProgress * 79.99);
+        // Calculates, rounds and displays the total price of the items
+        System.out.println("Total Price: $" + df.format((moscowHoodie * 69.99)+(moscowZipper * 74.99)+(hartsShirt * 64.99)+(wildBoy * 89.99)+(pugetProgress * 79.99)));
+        divider(10);
     }
 }
