@@ -39,16 +39,16 @@ fun anotherCollege() {
 }
 
 fun mit() {
-    println("Massachusetts Institute of Technology\n2019 Enrollment: 2,024\nPercentage of women: 43%\nUndergraduate tuition: $45,278\nFun fact: Professor Anant Agarwal has a nice mustache.")
+    println("Massachusetts Institute of Technology\n2019 Enrollment: 2,024 students\nPercentage of women: 43%\nUndergraduate tuition: $45,278\nFun fact: Professor Anant Agarwal has a nice mustache.")
     anotherCollege()
 }
 
 fun harvard() {
-    println()
+    println("Harvard University\n2019 Enrollment: 6,766 students\nPercent of women: %48\nUndergraduate Tuition: $45,278\nFun fact: Harvard was founded before Calculus existed.")
     anotherCollege()
 }
 
 fun ccm() {
-    println()
+    println("County College of Morris\n2019 Enrollment: 8,447 students\nPercent of women: %48\nUndergraduate Tuition: $8,200\nFun fact: Students from the Morris County Vocational School can attend CCM for their senior year.")
     anotherCollege()
 }
