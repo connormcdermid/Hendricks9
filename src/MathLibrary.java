@@ -1,3 +1,11 @@
+/**
+ * @author Frank Gomes
+ * @version 0.1
+ * @lab 6.1 Worksheet Math Methods
+ * @date 18-02-19
+ * @extra exits vim
+ **/
+
 import java.util.Scanner;
 
 public class MathLibrary {
@@ -12,6 +20,12 @@ public class MathLibrary {
             case "1":
                 one();
                 break;
+            case ":q":
+                System.out.println("Nice try.");
+                break;
+            case "exit":
+                System.out.println("Goodbye.");
+                System.exit(0);
             default:
                 System.out.println("That was not a recognized input.");
                 break;
@@ -20,6 +34,8 @@ public class MathLibrary {
     }
 
     static void one() {
-
+        System.out.println("Enter a positive or negative decimal number.");
+        double input = kbd.nextDouble();
+        System.out.println(Math.round(input));
     }
 }
