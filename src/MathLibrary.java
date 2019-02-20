@@ -21,7 +21,7 @@ public class MathLibrary {
 
     public static void main(String[] args) {
         System.out.println("Which problem would you like to see?");
-        System.out.println(" 1. Rounding Up\n 2. Age difference\n 3. Square Root Chart\n 4. Powers Chart\n 5. ");
+        System.out.println(" 1. Rounding Up\n 2. Age difference\n 3. Square Root Chart\n 4. Powers Chart\n 5. Big & Small Integer\n 6. Costumes and Things\n 7. ");
         String input = kbd.next();
         switch (input) {
             case "1":
@@ -32,6 +32,15 @@ public class MathLibrary {
                 break;
             case "3":
                 three();
+                break;
+            case "4":
+                four();
+                break;
+            case "5":
+                five();
+                break;
+            case "6":
+                six();
                 break;
             // How do i quit vim please help my macbook isnt working !!!!!!!*
             case ":q":
@@ -46,7 +55,7 @@ public class MathLibrary {
                         System.out.println("e");
                     } /*Handles the exception from URI convertion*/ catch (URISyntaxException e2) {
                         System.out.println("ee");
-                    } /*Handles the exception from opening the URL on the Desktop*/catch (IOException e3) {
+                    } /*Handles the exception from opening the URL on the Desktop*/ catch (IOException e3) {
                         System.out.println("eee");
                     }
                 }
@@ -64,14 +73,14 @@ public class MathLibrary {
     }
 
     // Problem 1
-    static void one() {
+    private static void one() {
         System.out.println("Enter a positive or negative decimal number.");
         double input = kbd.nextDouble();
         System.out.println(Math.round(input));
     }
 
     // Problem 2
-    static void two() {
+    private static void two() {
         System.out.println("Enter an age.");
         int age1 = kbd.nextInt();
         System.out.println("Enter another age.");
@@ -80,7 +89,7 @@ public class MathLibrary {
     }
 
     // Problem 3
-    static void three() {
+    private static void three() {
         System.out.println("Num.  Sq. Rt.");
         // Keeps it going until 20 is hit
         for (int i = 1; i <= 20; i++)
@@ -89,7 +98,43 @@ public class MathLibrary {
     }
 
     // Problem 4
-    static void four() {
+    private static void four() {
+        for (int i = 1; i <= 5; i++)
+            System.out.println(i + " " + (i^2) + " " + (i^3));
+        System.out.println("Done!");
+    }
 
+    // Problem 5
+    private static void five() {
+        System.out.println("Please enter an integer.");
+        int int1 = kbd.nextInt();
+        System.out.println("Please enter another integer.");
+        int int2 = kbd.nextInt();
+        // Checks if int1 is greater than int2 and prints int1
+        // Unless it's not, then it prints int2, but if both equal says "equal"
+        if (int1 > int2)
+            System.out.println(int1);
+        else if (int2 > int1)
+            System.out.println(int2);
+        else if (int1 == int2)
+            System.out.println("Both integers are equal.");
+        else
+            System.out.println("Congratulations. You broke this program.");
+    }
+
+    // Problem 6
+    private static void six() {
+        System.out.println("48\" = " + circleCalculator(48) + " sq. in. fabric, " + circumferenceCalculator(48) + " in. piping.");
+        System.out.println("48\" = " + circleCalculator(48) + " sq. in. fabric, " + circumferenceCalculator(48) + " in. piping.");
+    }
+
+    // Calculates the area of the circle based on the provided height of the child
+    private static long circleCalculator(int height) {
+        return round(3.14159265358979323*(height^2));
+    }
+
+    // Calculates the circumference of the circle based on the provided height of the child
+    private static long circumferenceCalculator(int height) {
+        return round(2*3.14159265358979323*height);
     }
 }
