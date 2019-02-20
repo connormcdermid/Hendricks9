@@ -45,6 +45,8 @@ public class MathLibrary {
             case "7":
                 seven();
                 break;
+            case "8":
+                eight();
             // How do i quit vim please help my macbook isnt working !!!!!!!*
             case ":q":
                 System.out.println("Nice try.");
@@ -103,7 +105,7 @@ public class MathLibrary {
     // Problem 4
     private static void four() {
         for (int i = 1; i <= 5; i++)
-            System.out.println(i + " " + (i^2) + " " + (i^3));
+            System.out.println(i + " " + (i*i) + " " + (i*i*i));
         System.out.println("Done!");
     }
 
@@ -150,5 +152,11 @@ public class MathLibrary {
             long toPrint = (long) floor(40 * exp(0.25935*i));
             System.out.println("Hour " + i + ": " + toPrint + " bacteria");
         }
+    }
+
+    // Problem 8
+    private static void eight() {
+        System.out.println("Hypotenuse: " + hypot(9,13));
+        System.out.println("Angle: " + toDegrees(acos(13.0 / hypot(9,13))) + "\u00b0");
     }
 }
