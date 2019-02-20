@@ -21,7 +21,7 @@ public class MathLibrary {
 
     public static void main(String[] args) {
         System.out.println("Which problem would you like to see?");
-        System.out.println(" 1. Rounding Up\n 2. Age difference\n 3. Square Root Chart\n 4. Powers Chart\n 5. Big & Small Integer\n 6. Costumes and Things\n 7. ");
+        System.out.println(" 1. Rounding Up\n 2. Age difference\n 3. Square Root Chart\n 4. Powers Chart\n 5. Big & Small Integer\n 6. Costumes and Things\n 7. Bacteria Multiplication\n 8. Right Triangle");
         String input = kbd.next();
         switch (input) {
             case "1":
@@ -41,6 +41,9 @@ public class MathLibrary {
                 break;
             case "6":
                 six();
+                break;
+            case "7":
+                seven();
                 break;
             // How do i quit vim please help my macbook isnt working !!!!!!!*
             case ":q":
@@ -130,13 +133,22 @@ public class MathLibrary {
         System.out.println("40\" = " + circleCalculator(36) + " sq. in. fabric, " + circumferenceCalculator(36) + " in. piping.");
     }
 
-    // Calculates the area of the circle based on the provided height of the child
+    // Calculates the area of the circle based on the provided height of the child, rounds up, and returns the result as a long
     private static long circleCalculator(int height) {
-        return round(3.14159265358979323*(height^2));
+        return (long) ceil(3.14159265358979323*(height^2));
     }
 
-    // Calculates the circumference of the circle based on the provided height of the child
+    // Calculates the circumference of the circle based on the provided height of the child, rounds up, and returns the result as a long
     private static long circumferenceCalculator(int height) {
-        return round(2*3.14159265358979323*height);
+        return (long) ceil(2*3.14159265358979323*height);
+    }
+
+    // Problem 7
+    private static void seven() {
+        for (int i = 0; i <= 24; i++) {
+            // Does the equation with i as the current hour
+            long toPrint = (long) floor(40 * exp(0.25935*i));
+            System.out.println("Hour " + i + ": " + toPrint + " bacteria");
+        }
     }
 }
