@@ -124,8 +124,10 @@ public class MathLibrary {
 
     // Problem 6
     private static void six() {
-        System.out.println("48\" = " + circleCalculator(48) + " sq. in. fabric, " + circumferenceCalculator(48) + " in. piping.");
-        System.out.println("48\" = " + circleCalculator(48) + " sq. in. fabric, " + circumferenceCalculator(48) + " in. piping.");
+        System.out.println("42\" = " + circleCalculator(42) + " sq. in. fabric, " + circumferenceCalculator(42) + " in. piping.");
+        System.out.println("40\" = " + circleCalculator(40) + " sq. in. fabric, " + circumferenceCalculator(40) + " in. piping.");
+        System.out.println("38\" = " + circleCalculator(38) + " sq. in. fabric, " + circumferenceCalculator(38) + " in. piping.");
+        System.out.println("40\" = " + circleCalculator(36) + " sq. in. fabric, " + circumferenceCalculator(36) + " in. piping.");
     }
 
     // Calculates the area of the circle based on the provided height of the child
