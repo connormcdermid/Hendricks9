@@ -47,6 +47,7 @@ public class MathLibrary {
                 break;
             case "8":
                 eight();
+                break;
             // How do i quit vim please help my macbook isnt working !!!!!!!*
             case ":q":
                 System.out.println("Nice try.");
