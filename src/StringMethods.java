@@ -165,4 +165,16 @@ public class StringMethods {
                 lowercaseCount++;
         System.out.println("There are " + lowercaseCount + " lowercase characters in that sentence.");
     }
+
+    // Problem 8
+    private static void eight() {
+        String detective = "Sherlock Holmes";
+        int i = 0;
+        for (i = 0; i < detective.length(); i++)
+            if (detective.charAt(i) == ' ') {
+                ++i;
+                break;
+            }
+
+    }
 }
