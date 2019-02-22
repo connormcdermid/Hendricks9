@@ -9,6 +9,8 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+import static java.lang.Character.*;
+
 public class StringMethods {
 
     private static Scanner kbd = new Scanner(System.in);
@@ -107,10 +109,8 @@ public class StringMethods {
         else if (order == 0)
             System.out.println("The words are the same.");
         // Checks if word1 comes before word2
-        else if (order > 0)
-            System.out.println(word1 + ", " + word2);
         else
-            System.out.println("You have broke the program. Congratulations.");
+            System.out.println(word1 + ", " + word2);
     }
 
     // Problem 4
@@ -127,6 +127,42 @@ public class StringMethods {
 
     // Problem 5
     private static void five() {
+        String person = "Charlie Brown";
+        // Prints every character in the String person, but does it in uppercase using toUpperCase
+        for (int i = 0; i < person.length(); i++)
+            System.out.println(toUpperCase(person.charAt(i)));
+        // Gets user's name
+        System.out.println("Enter your name.");
+        String name = kbd.nextLine();
+        // Prints every character in the String person, but does it in lowercase using toLowerCase
+        for (int i = 0; i < name.length(); i++)
+            System.out.println(toLowerCase(name.charAt(i)));
+    }
 
+    // Problem 6
+    private static void six() {
+        System.out.println("Enter the name of a city.");
+        String city = kbd.nextLine();
+        for (int i = 0; i < city.length(); i++) {
+            if (isUpperCase(city.charAt(i)))
+                System.out.println(toLowerCase(city.charAt(i)));
+            if (isLowerCase(city.charAt(i)))
+                System.out.println(toUpperCase(city.charAt(i)));
+            else {
+                System.out.println("This city's name contains an unrecognized character.");
+                return;
+            }
+        }
+    }
+
+    // Problem 7
+    private static void seven() {
+        System.out.println("Enter a sentence.");
+        String sentence = kbd.nextLine();
+        int lowercaseCount = 0;
+        for (int i = 0; i < sentence.length(); i++)
+            if (isLowerCase(sentence.charAt(i)))
+                lowercaseCount++;
+        System.out.println("There are " + lowercaseCount + " lowercase characters in that sentence.");
     }
 }
