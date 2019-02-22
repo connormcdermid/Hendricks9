@@ -6,10 +6,15 @@
  * @extra Does a linux login
  **/
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.lang.Character.*;
+import static javax.xml.bind.DatatypeConverter.parseInt;
 
 public class StringMethods {
 
@@ -169,12 +174,27 @@ public class StringMethods {
     // Problem 8
     private static void eight() {
         String detective = "Sherlock Holmes";
-        int i = 0;
-        for (i = 0; i < detective.length(); i++)
-            if (detective.charAt(i) == ' ') {
-                ++i;
-                break;
-            }
+        // Finds the space and prints everything after it
+        System.out.println(detective.substring(detective.lastIndexOf(" ") + 1));
+    }
 
+    // Problem 9
+    private static void nine() {
+        // String to get number from
+        String address = "West 103rd Street";
+        // Pattern to identify number (\d identifies digits, + allows multi-digit numbers, \\ is to avoid \d becoming an escape sequence
+        Pattern p = Pattern.compile("\\d+");
+        // Matches the pattern to identify any numbers
+        Matcher m = p.matcher(address);
+        // Prints those numbers multiplied by 12
+        while (m.find())
+            System.out.println(parseInt(m.group())*12);
+    }
+
+    // Problem 10
+    private static void ten() {
+        String name = "Ford, Harrison";
+        System.out.println(name.substring(name.lastIndexOf(" ") + 1));
+        System.out.println(StringUtils.substringBefore(name, ","));
     }
 }
