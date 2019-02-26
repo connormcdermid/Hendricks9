@@ -1,12 +1,10 @@
-/**
- * @author Frank Gomes
- * @version 0.1
- * @lab 6.3 Worksheet Strings
- * @date 21-02-19
- * @extra Does a linux login
- **/
-
-import org.apache.commons.lang3.StringUtils;
+/*
+  author: Frank Gomes
+  version: 0.1
+  lab: 6.3 Worksheet Strings
+  date: 21-02-19
+  extra: Does a linux login
+ */
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -22,7 +20,7 @@ public class StringMethods {
 
     public static void main(String[] args) {
         System.out.println("Which problem would you like to see?\n 1. Password\n 2. Movie Titles\n 3. Alphabetical Order\n 4. Screen Name\n 5. Name Case Shift\n 6. City Case Shift\n 7. Lowercase Counter\n 8. Last Name\n 9. Number Finder\n 10. Commas, Please");
-        String input = kbd.next();
+        String input = kbd.nextLine();
         switch (input) {
             case "1":
                 one();
@@ -63,8 +61,10 @@ public class StringMethods {
 
     // Problem 1
     private static void one() {
+        System.out.println("Enter the password.");
+        String input = kbd.nextLine();
         // Checks if user entered the correct password (it's progress by the way)
-        if (kbd.nextLine().equals("progess")) {
+        if (input.equals("progress")) {
             // Tries to use the local machine's login MOTD (only available on linux machines with neofetch, inxi, and ansiweather)
             try {
                 Runtime.getRuntime().exec("bash /etc/update-motd.d/01-custom");
@@ -76,6 +76,7 @@ public class StringMethods {
         }
         // Run if user doesn't enter proper password
         else {
+            System.out.println(input);
             System.out.println("Wrong password. Hint: puget has much of it");
         }
     }
@@ -84,9 +85,9 @@ public class StringMethods {
     private static void two() {
         // Gets movie titles and stores them as name1 and name2 respectively
         System.out.println("Enter a movie title.");
-        String name1 = kbd.next();
+        String name1 = kbd.nextLine();
         System.out.println("Enter another movie title.");
-        String name2 = kbd.next();
+        String name2 = kbd.nextLine();
         // If the first title is longer
         if (name1.length() > name2.length())
             System.out.println(name1);
@@ -102,13 +103,13 @@ public class StringMethods {
     private static void three() {
         // Gets two words from user
         System.out.println("Input a word.");
-        String word1 = kbd.next();
+        String word1 = kbd.nextLine();
         System.out.println("Input another word.");
-        String word2 = kbd.next();
+        String word2 = kbd.nextLine();
         // Value is 0 if both are the same, <0 if afterwards alphabetically, >0 if before alphabetically
         int order = word1.compareToIgnoreCase(word2);
         // Checks if word2 comes before word1
-        if (order < 0)
+        if (order > 0)
             System.out.println(word2 + ", " + word1);
         // Checks if both words are the same, regardless of case
         else if (order == 0)
@@ -135,13 +136,15 @@ public class StringMethods {
         String person = "Charlie Brown";
         // Prints every character in the String person, but does it in uppercase using toUpperCase
         for (int i = 0; i < person.length(); i++)
-            System.out.println(toUpperCase(person.charAt(i)));
+            System.out.print(toUpperCase(person.charAt(i)));
+        System.out.print("\n");
         // Gets user's name
         System.out.println("Enter your name.");
         String name = kbd.nextLine();
         // Prints every character in the String person, but does it in lowercase using toLowerCase
         for (int i = 0; i < name.length(); i++)
-            System.out.println(toLowerCase(name.charAt(i)));
+            System.out.print(toLowerCase(name.charAt(i)));
+        System.out.print("/n");
     }
 
     // Problem 6
@@ -194,7 +197,9 @@ public class StringMethods {
     // Problem 10
     private static void ten() {
         String name = "Ford, Harrison";
-        System.out.println(name.substring(name.lastIndexOf(" ") + 1));
-        System.out.println(StringUtils.substringBefore(name, ","));
+        // Splits name into first and last name
+        String[] parts = name.split(", ");
+        System.out.println(parts[1]);
+        System.out.println(parts[0]);
     }
 }

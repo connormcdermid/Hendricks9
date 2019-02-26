@@ -1,7 +1,4 @@
-import java.util.Scanner
-import kotlin.system.exitProcess
-
-/**
+/* /**
  * @author Frank Gomes
  * @version 0.1
  * @lab MidYear Coding OPTION 2
@@ -51,4 +48,4 @@ fun harvard() {
 fun ccm() {
     println("County College of Morris\n2019 Enrollment: 8,447 students\nPercent of women: %48\nUndergraduate Tuition: $8,200\nFun fact: Students from the Morris County Vocational School can attend CCM for their senior year.")
     anotherCollege()
-}
+}*/
