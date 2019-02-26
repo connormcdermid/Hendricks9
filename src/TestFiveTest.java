@@ -1,29 +1,12 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 public class TestFiveTest {
         public static void main (String[] args) {
-            stuff( );
-            int x = 2, y = 3;
-            moreStuff(x, y);
-            System.out.println(x + " " + y);
-            System.out.print(evenMoreStuff( ));
-        }
-    //**Method definition
-        public static void stuff()
-        {
-            System.out.print("Howdy! \n");
-        }
-    //**Method definition
-        public static int evenMoreStuff()
-        {
-            System.out.println("Way!");
-            int num = 2000;
-            num++;
-            return(num);
-        }
-    //**Method definition
-        public static void moreStuff(int a, int b)
-        {
-            a += 5;
-            b++;
-            System.out.println(a + " " + b);
+            int diceroll = 0, rolls = 0;
+            while (diceroll != 2) {
+                diceroll = ThreadLocalRandom.current().nextInt(0, 6 + 1);
+                rolls++;
+            }
+            System.out.println("It took " + rolls + " roll(s) to get the die to show 2.");
         }
     }

@@ -111,10 +111,10 @@ public class StringMethods {
         // Checks if word2 comes before word1
         if (order > 0)
             System.out.println(word2 + ", " + word1);
-        // Checks if both words are the same, regardless of case
+            // Checks if both words are the same, regardless of case
         else if (order == 0)
             System.out.println("The words are the same.");
-        // Checks if word1 comes before word2
+            // Checks if word1 comes before word2
         else
             System.out.println(word1 + ", " + word2);
     }
@@ -144,7 +144,7 @@ public class StringMethods {
         // Prints every character in the String person, but does it in lowercase using toLowerCase
         for (int i = 0; i < name.length(); i++)
             System.out.print(toLowerCase(name.charAt(i)));
-        System.out.print("\n");
+        System.out.print("/n");
     }
 
     // Problem 6
