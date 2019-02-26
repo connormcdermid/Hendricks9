@@ -144,7 +144,7 @@ public class StringMethods {
         // Prints every character in the String person, but does it in lowercase using toLowerCase
         for (int i = 0; i < name.length(); i++)
             System.out.print(toLowerCase(name.charAt(i)));
-        System.out.print("/n");
+        System.out.print("\n");
     }
 
     // Problem 6
