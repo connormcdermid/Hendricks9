@@ -1,10 +1,9 @@
-/**
- * @author Frank Gomes
- * @version 0.1
- * @lab 6.1 Worksheet Math Methods
- * @date 18-02-19
- * @extra exits vim
- **/
+/*
+ author: Frank Gomes
+ lab: 6.1 Worksheet Math Methods
+ date: 18-02-19
+ extra: exits vim
+ */
 
 import java.io.IOException;
 import java.net.MalformedURLException;
