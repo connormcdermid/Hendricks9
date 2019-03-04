@@ -2,12 +2,15 @@
  author: Scrolling cursor
  lab: 6.6 Millenium Falcon Project
  date: 28-02-19
- extra: Flipping cursor
+ extra: generates "Star Wars name on the fly
  */
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class FillenniumMalcon {
+
+    private static Random
+
     public static void main(String[] args) {
         System.out.println("Millennium Falcon Launch Simulation");
         System.out.println("System Navigator: " + nameGen("Frank", "Gomes", "progress", "Mount Olive"));
@@ -19,9 +22,11 @@ public class FillenniumMalcon {
             System.exit(999);
         }
         // Constructs "Star Wars first name"
-        String swFirstName = lastName.charAt(0) + lastName.charAt(1) + lastName.charAt(2) + firstName.charAt(0) + String.valueOf(firstName.charAt(1));
+        // I don't know why the String.valueOf() is needed, but without it it prints numbers instead of letters
+        String swFirstName = String.valueOf(lastName.charAt(0)) + String.valueOf(lastName.charAt(1)) + String.valueOf(lastName.charAt(2)) + String.valueOf(firstName.charAt(0)) + String.valueOf(firstName.charAt(1));
 
         // Constructs "Star Wars last name"
+        // Same reasoning for String.valueOf() as used above.
         String swLastName = String.valueOf(maidenName.charAt(0)) + String.valueOf(maidenName.charAt(1)) + String.valueOf(birthTown.charAt(0)) + String.valueOf(birthTown.charAt(1)) + String.valueOf(birthTown.charAt(2));
 
         String finalName = swFirstName + " " + swLastName;
@@ -29,7 +34,8 @@ public class FillenniumMalcon {
         // Returns finished name
         return finalName;
     }
-/*
+
+
     private static int r2d2() {
 
     }
@@ -52,5 +58,5 @@ public class FillenniumMalcon {
 
     private static int leia() {
 
-    } */
+    }
 }
