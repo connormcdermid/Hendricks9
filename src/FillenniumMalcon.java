@@ -1,5 +1,5 @@
 /*
- author: Scrolling cursor
+ author: Frank Gomes
  lab: 6.7 Millennium Falcon Project
  date: 28-02-19
  extra: Progress bars
@@ -133,18 +133,12 @@ public class FillenniumMalcon {
         System.out.println("\n20 launch attempts failed.");
         System.out.println("Starting force override.");
         try (ProgressBar pb3 = new ProgressBar("Calling Yoda: ", 100)) {
-            pb3.stepBy(10);
-            Sleep(108);
-            pb3.stepBy(20);
-            Sleep(228);
-            pb3.stepBy(20);
-            Sleep(300);
-            pb3.stepBy(10);
-            Sleep(500);
             pb3.stepBy(15);
-            Sleep(400);
-            pb3.stepBy(5);
-            Sleep(100);
+            Sleep(13);
+            pb3.stepBy(20);
+            Sleep(278);
+            pb3.stepBy(20);
+            Sleep(457);
             pb3.stepTo(100);
         }
         System.out.println("\nHe's on vacation. Launch aborted.");
