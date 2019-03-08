@@ -172,7 +172,6 @@ public class FillenniumMalcon {
         return swFirstName + " " + swLastName;
     }
 
-
     private static boolean r2d2() {
         // If "system efficiency" (random number from rand.nextInt()) is greater than or equal to 40%, the launch is a go.
         return (rand.nextInt(101) >= 40);
