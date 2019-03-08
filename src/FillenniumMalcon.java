@@ -2,7 +2,7 @@
  author: Scrolling cursor
  lab: 6.6 Millenium Falcon Project
  date: 28-02-19
- extra: progress bar
+ extra: Progress bars
  */
 
 import java.util.Random;
@@ -41,6 +41,7 @@ public class FillenniumMalcon {
             Sleep(100);
             pb2.stepTo(100);
         }
+
     }
 
     // Generates the wait in between the progress bar advances
