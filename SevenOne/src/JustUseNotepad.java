@@ -6,6 +6,7 @@
  */
 
 import java.io.*;
+import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.Character.toLowerCase;
@@ -103,6 +104,30 @@ class two {
 
         // Neat little divider
         pw.println("--------------------");
+        pw.close();
+    }
+}
+
+class three {
+    public static void main(String[] args) {
+        Scanner kbd = new Scanner(System.in);
+        Random rand = new Random();
+
+        // Creates File and PrintWriter for Numbers.txt
+        File numbers = new File("SevenOne/output/numbers.txt");
+        PrintWriter pw = null;
+        try {
+            pw = new PrintWriter(numbers);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("How many numbers would you like to be generated?");
+        int amount = kbd.nextInt();
+
+        for (int i = 0; i < amount; i++)
+            pw.println(rand.nextInt(100 + 1));
+
         pw.close();
     }
 }
