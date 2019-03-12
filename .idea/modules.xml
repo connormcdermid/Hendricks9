@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Comp and also Sci.iml" filepath="$PROJECT_DIR$/Comp and also Sci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SevenOne/SevenOne.iml" filepath="$PROJECT_DIR$/SevenOne/SevenOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/old/src/old.iml" filepath="$PROJECT_DIR$/old/src/old.iml" />
+      <module fileurl="file://$PROJECT_DIR$/old/old.iml" filepath="$PROJECT_DIR$/old/old.iml" />
     </modules>
   </component>
 </project>

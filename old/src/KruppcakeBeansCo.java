@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 class KruppcakeBeansCo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -167,3 +167,4 @@ class KruppcakeBeansCo {
     }
 }
 
+*/
