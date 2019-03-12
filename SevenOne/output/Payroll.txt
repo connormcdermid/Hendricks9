@@ -1,0 +1,10 @@
+
+Employee 1: Demar DeRozan
+Hours: 65.0
+Hourly Wage: 5.78
+Week's Pay: 375.7
+Employee 2: Puget Tumm
+Hours: 0.0
+Hourly Wage: 34.0
+Week's Pay: 0.0
+--------------------
