@@ -4,7 +4,7 @@
  date: 28-02-19
  extra: Progress bars
  */
-
+/*
 import java.util.Random;
 import me.tongfei.progressbar.*;
 
@@ -201,4 +201,4 @@ public class FillenniumMalcon {
         // If "system efficiency" (random number from rand.nextInt()) is greater than or equal to 45%, the launch is a go.
         return (rand.nextInt(101) >= 45);
     }
-}
+}*/
