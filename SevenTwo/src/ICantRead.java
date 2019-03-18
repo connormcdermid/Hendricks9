@@ -7,6 +7,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
@@ -89,21 +90,39 @@ class three {
         } catch (FileNotFoundException e) {
             e.getMessage();
             e.getStackTrace();
-
         }
 
         // Variables for determining evens, odds, sum, and average
-        int sum = 0, average = 0, totalNumbers = 0;
+        int sum = 0, totalNumbers = 0;
         int evens = 0, odds = 0;
 
+        // Loop that gets each number from each line of the file
         while (true) {
-            int nextNum = parseInt(numbers.nextLine());
+            // Makes the next line into a String named line
+            String line = null;
+            try {
+                line = numbers.nextLine();
+            } catch (NoSuchElementException e) {
+                // The last line is empty. The previous nextLine() will throw a NoSuchElementException if the line is empty, showing the end of the file.
+                break;
+            }
+            int nextNum = parseInt(line);
             sum += nextNum;
+            // Checks if the number is even, and if so, increments evens
             if (nextNum % 2 == 0)
                 evens++;
+            // Checks if the number is odds, and if so, increments odds
             if (nextNum % 2 == 1)
                 odds++;
+            // Increments counter of numbers.
             totalNumbers++;
         }
+        // Calculates average
+        int average = sum / totalNumbers;
+        // Outputs all the needed info
+        System.out.println("Numbers: " + totalNumbers);
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Even integers: " + evens);
     }
 }
