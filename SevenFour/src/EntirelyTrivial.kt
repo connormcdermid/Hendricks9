@@ -1,4 +1,3 @@
-import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
 import java.util.*
@@ -11,6 +10,13 @@ import java.util.*
  */
 
 fun main() {
+    // Array containing all of the questions
+    val question1 = arrayOf("How many years was rapper Daniel Hernandez originally sentenced to?", " 1. 40 years", " 2. 47 years", " 3. 25 years", " 4. 69 Years", "2")
+    val question2 = arrayOf("What is the capital of Peru?", " 1. Lima", " 2. São Paulo", " 3. Bogota", " 4. Mexico City", "1")
+    val question3 = arrayOf("What was the most watched UK TV programme?", " 1. M*A*S*H", " 2. BBC's Sherlock", " 3. The Office", " 4. Eastenders", "")
+    val question4 = arrayOf("What railway linked Moscow and Irkutsk in 1900?", " 1. Shinkansen Line", " 2. Trans-Siberian Railway", " 3. Sakhalin's Railway", " 4. Allegro Line", "2")
+    val question5 = arrayOf("What's another common name for the ", " 1. ", " 2. ", " 3. ", " 4. ", "")
+
     // Creates PrintWriter to write to score.txt
     val scoreFile = FileWriter("SevenFour/output/score.txt", true)
     val pw = PrintWriter(scoreFile)
