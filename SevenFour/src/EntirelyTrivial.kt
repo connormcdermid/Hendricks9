@@ -19,7 +19,13 @@ fun main() {
     val question6 = arrayOf("Leader of terrorist group al-Qaeda, Osama bin Laden, was killed in what year?", " 1. 2004", " 2. 1994", " 3. 2011", " 4. 2013", "3")
     val question7 = arrayOf("Which country is the city Tbilisi located in?", " 1. Georgia", " 2. Romania", " 3. Greece", " 4. Peru", "1")
     val question8 = arrayOf("The games convention PAX West is held where?", " 1. Boston, MA", " 2. Seattle, WA", " 3. San Antonio, TX", " 4. Everett, WA", "2")
-    val question9 = arrayOf("Rapper Gunna released which album in 2018?", " 1. Drip Too Hard", " 2. Drip or Drown", " 3. Drip Harder", " 4. ", "")
+    val question9 = arrayOf("Rapper Gunna released which album in 2018?", " 1. Drip Too Hard", " 2. Drip or Drown", " 3. Drip Harder", " 4. Drip or Drown 2", "3")
+    val question10 = arrayOf("The original Nintendo 3DS was released in the US in what year?", " 1. 2011", " 2. 2012", " 3. 2010", " 4. 2008", "1")
+    val question11 = arrayOf("The city of Warsaw is in what country?", " 1. Romania", " 2. Poland", " 3. Iran", " 4. Uruguay", "2")
+    val question12 = arrayOf("The red fox is part of what family?", " 1. Vulpes", " 2. Carnivora", " 3. Canidae", " 4. Canis", "3")
+    val question13 = arrayOf("The Arduino microcontroller gets its name from which language?", " 1. Greek", " 2. French", " 3. Afrikaans", " 4. Italian", "4")
+    val question14 = arrayOf("Game developer Scott Cawthon is responsible for what game?", " 1. Five Nights at Freddy's", " 2. Undertale", " 3. Tacoma", " 4. ABZU", "1")
+    val question15 = arrayOf("What is the name of Barack Obama's dog?", " 1. Spot", " 2. Fido", " 3. Small Obama", " 4. Bo", "4")
 
     // Creates PrintWriter to write to score.txt
     val scoreFile = FileWriter("SevenFour/output/score.txt", true)
