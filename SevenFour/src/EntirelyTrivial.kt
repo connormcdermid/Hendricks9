@@ -1,6 +1,7 @@
 import java.io.FileWriter
 import java.io.PrintWriter
 import java.util.*
+import kotlin.random.Random
 
 /*
   author: Frank Gomes
@@ -11,6 +12,7 @@ import java.util.*
 
 fun main() {
     // Array containing all of the questions
+    val question0 = arrayOf("What is the name of Barack Obama's dog?", " 1. Spot", " 2. Fido", " 3. Small Obama", " 4. Bo", "4")
     val question1 = arrayOf("How many years was rapper Daniel Hernandez originally sentenced to?", " 1. 40 years", " 2. 47 years", " 3. 25 years", " 4. 69 Years", "2")
     val question2 = arrayOf("What is the capital of Peru?", " 1. Lima", " 2. São Paulo", " 3. Bogota", " 4. Mexico City", "1")
     val question3 = arrayOf("What was the most watched UK TV programme?", " 1. M*A*S*H", " 2. BBC's Sherlock", " 3. The Office", " 4. Eastenders", "4")
@@ -25,7 +27,8 @@ fun main() {
     val question12 = arrayOf("The red fox is part of what family?", " 1. Vulpes", " 2. Carnivora", " 3. Canidae", " 4. Canis", "3")
     val question13 = arrayOf("The Arduino microcontroller gets its name from which language?", " 1. Greek", " 2. French", " 3. Afrikaans", " 4. Italian", "4")
     val question14 = arrayOf("Game developer Scott Cawthon is responsible for what game?", " 1. Five Nights at Freddy's", " 2. Undertale", " 3. Tacoma", " 4. ABZU", "1")
-    val question15 = arrayOf("What is the name of Barack Obama's dog?", " 1. Spot", " 2. Fido", " 3. Small Obama", " 4. Bo", "4")
+    val questionArray = arrayOf(question0, question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, question11, question12, question13, question14)
+
 
     // Creates PrintWriter to write to score.txt
     val scoreFile = FileWriter("SevenFour/output/score.txt", true)
@@ -41,18 +44,32 @@ fun main() {
     println("Please enter your first name.")
     pw.print("\nName: " + kbd.next())
     println("Please enter your last name.")
-    pw.print(" " + kbd.next())
+    pw.print(" " + kbd.next() + "\n")
 
     // Introduces trivia show
     println("Welcome to Generic Uncopyrighted Trivia Game!\nHow was your day?")
     Thread.sleep(2000)
     println("I don't care.")
     print("\nAre you ready?")
-    Thread.sleep(500)
+    Thread.sleep(1000)
     print(" No?")
-    Thread.sleep(500)
-    print(" Too bad.")
-    //
+    Thread.sleep(1000)
+    print(" Too bad.\n")
+
+    // Array to prevent reuse of questions
+    var questionUsed = intArrayOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+
+    // Questions
+    for (i in 1..15) {
+        var currentQuestion: Int = Random.nextInt(14)
+        print("\nQuestion $i: ")
+        if (questionUsed[currentQuestion] != 0) {
+            currentQuestion = Random.nextInt(14)
+        }
+        print(questionArray[currentQuestion][0])
+        questionUsed[currentQuestion] = 1
+
+    }
 
     // Closes PrintWriter & FileWriter
     pw.close()
