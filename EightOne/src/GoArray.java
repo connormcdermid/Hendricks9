@@ -1,16 +1,13 @@
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class GoArray {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int[] randNums = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        for (int i = 0; i < randNums.length; i++)
-            randNums[i] = rand.nextInt(11);
-        System.out.println(Arrays.toString(randNums));
-        System.out.print("\n[");
-        for (int i = 0; i < randNums.length; i++)
-            System.out.print(randNums[9-i] + ", ");
-        System.out.print("\b\b]");
+        double[] finalGrade = {85.8, 93.7, 76, 88.5, 100, 91.3};
+        int totalSum = 0;
+        for (int i = 0; i < finalGrade.length; i++)
+            totalSum += finalGrade[0];
+        System.out.println("Average Grade: " + Math.round(totalSum/finalGrade.length));
     }
 }
