@@ -61,13 +61,14 @@ fun main() {
 
     // Questions
     for (i in 1..15) {
-        var currentQuestion: Int = Random.nextInt(14)
+        var currentQuestion: Int = Random.nextInt(15)
         print("\nQuestion $i: ")
-        if (questionUsed[currentQuestion] != 0) {
-            currentQuestion = Random.nextInt(14)
+        while (questionUsed[currentQuestion] != 0) {
+            currentQuestion = Random.nextInt(15)
         }
         print(questionArray[currentQuestion][0])
         questionUsed[currentQuestion] = 1
+        print(questionArray[currentQuestion][1])
 
     }
 
