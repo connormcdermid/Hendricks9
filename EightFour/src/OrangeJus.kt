@@ -1,5 +1,4 @@
 import kotlin.random.Random
-import kotlin.random.nextInt
 
 /*
   author: Frank Gomes
@@ -9,17 +8,24 @@ import kotlin.random.nextInt
  */
 
 fun main() {
+    // Array of fruits
     var array = arrayOf("","","","","","","","","","")
-    var key = "orange"
-    // Sets every
-    for (i in 1..10) {
+    // Key value
+    val key = "orange"
+    // Amount of matches found
+    var foundValues = 0
+    // Sets every item to a random fruit
+    for (i in 1..10)
         array[i - 1] = randomize()
-    }
-
+    // Checks if the item in the array is an orange
+    for (i in 1..10)
+        if (array[i-1].equals(key))
+            foundValues++
+    println("Matches found: $foundValues")
 }
 
 fun randomize(): String {
     // Array of possible fruits
-    var fruits = arrayOf("strawberry","pineapple","orange","pear","blueberry","raspberry","starfruit","pomegranate","dragonfruit","banana","grapefruit","passionfruit")
+    val fruits = arrayOf("strawberry","pineapple","orange","pear","blueberry","raspberry","starfruit","pomegranate","dragonfruit","banana","grapefruit","passionfruit")
     return fruits[Random.nextInt(fruits.size - 1)]
 }

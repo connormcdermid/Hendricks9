@@ -1,5 +1,6 @@
 import java.io.FileWriter
 import java.io.PrintWriter
+import java.lang.Integer.parseInt
 import java.util.*
 import kotlin.random.Random
 
@@ -40,36 +41,59 @@ fun main() {
     // Creates Scanner to read user input
     val kbd = Scanner(System.`in`)
 
+    // Boolean that gets set to true when everyone has played
+    var over = false
+
     // Gets user info
-    println("Please enter your first name.")
-    pw.print("\nName: " + kbd.next())
-    println("Please enter your last name.")
-    pw.print(" " + kbd.next() + "\n")
+    while (!over) {
+        println("Please enter your first name.")
+        pw.print("\nName: " + kbd.next())
+        println("Please enter your last name.")
+        pw.print(" " + kbd.next() + "\n")
 
-    // Introduces trivia show
-    println("Welcome to Generic Uncopyrighted Trivia Game!\nHow was your day?")
-    Thread.sleep(2000)
-    println("I don't care.")
-    print("\nAre you ready?")
-    Thread.sleep(1000)
-    print(" No?")
-    Thread.sleep(1000)
-    print(" Too bad.\n")
+        // Introduces trivia show
+        println("Welcome to Generic Uncopyrighted Trivia Game!\nHow was your day?")
+        Thread.sleep(2000)
+        println("I don't care.")
+        print("\nAre you ready?")
+        Thread.sleep(1000)
+        print(" No?")
+        Thread.sleep(1000)
+        print(" Too bad.\n")
 
-    // Array to prevent reuse of questions
-    var questionUsed = intArrayOf(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        // Array to prevent reuse of questions
+        var questionUsed = intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-    // Questions
-    for (i in 1..15) {
-        var currentQuestion: Int = Random.nextInt(15)
-        print("\nQuestion $i: ")
-        while (questionUsed[currentQuestion] != 0) {
-            currentQuestion = Random.nextInt(15)
+        // Amount of correct questions
+        var questionsCorrect = 0
+
+        // Questions
+        for (i in 1..5) {
+            // Creates a random int to get question with
+            var currentQuestion: Int = Random.nextInt(15)
+            // Prints question number
+            print("\nQuestion $i: ")
+            // Checks if the current question selected was already used, gets another one if so
+            while (questionUsed[currentQuestion] != 0) {
+                currentQuestion = Random.nextInt(15)
+            }
+            println(questionArray[currentQuestion][0])
+            questionUsed[currentQuestion] = 1
+            for (i2 in 1..4)
+                println(questionArray[currentQuestion][i2])
+            val input = kbd.nextInt()
+            pw.println("Question " + i + ": " + questionArray[currentQuestion][0] + "\n Correct answer: " + questionArray[currentQuestion][5] + "\n Player's answer: " + input + "\n")
+            questionUsed[currentQuestion] = 1
+            if (questionArray[currentQuestion][5].equals(input))
+                questionsCorrect++
         }
-        print(questionArray[currentQuestion][0])
-        questionUsed[currentQuestion] = 1
-        print(questionArray[currentQuestion][1])
+        pw.println("Correct answers: $questionsCorrect/5\n")
 
+        // Asks if the user is the last player
+        println("Are you the last player? (Y/N)")
+        val input = kbd.next()
+        if (input.first() == 'Y' || input.first() == 'y')
+            over = true
     }
 
     // Closes PrintWriter & FileWriter
