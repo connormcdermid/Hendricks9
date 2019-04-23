@@ -1,4 +1,9 @@
-
+/*
+  author: Frank Gomes
+  lab: 8.6 Binary Search
+  date: 09-04-19
+  extra: binarySearch method can be overloaded for a upperbound and lowerbound
+ */
 
 fun main() {
     // Supplied array
