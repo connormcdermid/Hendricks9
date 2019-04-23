@@ -1,35 +1,64 @@
 
+
 fun main() {
     // Supplied array
     val coolArray = intArrayOf(11,16,22,23,34,46,48,50,75,78)
     // Supplied key value
     val key = 22
-    // Checks if each value in the array matches the key, once it finds one it outputs info and exits
-    for (i in 0 until coolArray.size)
-        if (coolArray[i] == key) {
-            println("Key value $key found at place $i, taking " + (i + 1) + " comparisons.")
-            System.exit(0)
+    // Calls binarySearch with needed information
+    binarySearch(coolArray,key)
+}
+
+fun binarySearch(array: IntArray, key: Int) {
+    var lowerbound = 0
+    var upperbound = array.size - 1
+    // Int to keep track of comparisons needed
+    var comparisonCount = 1
+    // Starts checking at centermost position
+    var position = (lowerbound + upperbound) / 2
+    // Checks if value at current position equals key and if
+    while (array[position] != key && lowerbound <= upperbound) {
+        comparisonCount++
+        if (array[position] > key)
+        // If the number is > key, decrease position by one
+        {
+            upperbound = position - 1
         }
-    // Executed if no match was found
-    println("No matches in array for key value $key.")
+        // If the number is < key, increases position by one
+        else {
+            lowerbound = position + 1
+        }
+        position = (lowerbound + upperbound) / 2
+    }
+    if (lowerbound <= upperbound) {
+        println("Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount")
+    } else
+        println("Value matching key $key not found in array. Comparisons done: $comparisonCount")
 }
 
 fun binarySearch(array: IntArray, lowerbound: Int, upperbound: Int, key: Int) {
     var lowerbound = lowerbound
     var upperbound = upperbound
-    var position: Int
-    var comparisonCount = 1 // counting the number of comparisons (optional)
-    // To start, find the subscript of the middle position.
-    position = (lowerbound + upperbound) / 2
+    // Int to keep track of comparisons needed
+    var comparisonCount = 1
+    // Starts checking at centermost position
+    var position = (lowerbound + upperbound) / 2
+    // Checks if value at current position equals key and if
     while (array[position] != key && lowerbound <= upperbound) {
         comparisonCount++
         if (array[position] > key)
-        // If the number is > key, decrease position by one.
+        // If the number is > key, decrease position by one
         {
             upperbound = position - 1
-        } else {
-            lowerbound = position + 1 // Else, increase position by one.
+        }
+        // If the number is < key, increases position by one
+        else {
+            lowerbound = position + 1
         }
         position = (lowerbound + upperbound) / 2
     }
+    if (lowerbound <= upperbound) {
+        println("Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount")
+    } else
+        println("Value matching key $key not found in given section of array. Comparisons done: $comparisonCount")
 }
