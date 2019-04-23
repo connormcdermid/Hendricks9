@@ -11,10 +11,10 @@ fun main() {
     // Supplied key value
     val key = 22
     // Calls binarySearch with needed information
-    binarySearch(coolArray,key)
+    println(binarySearch(coolArray,key))
 }
 
-fun binarySearch(array: IntArray, key: Int) {
+fun binarySearch(array: IntArray, key: Int): String {
     var lowerbound = 0
     var upperbound = array.size - 1
     // Int to keep track of comparisons needed
@@ -36,14 +36,14 @@ fun binarySearch(array: IntArray, key: Int) {
         position = (lowerbound + upperbound) / 2
     }
     if (lowerbound <= upperbound) {
-        println("Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount")
+        return "Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount"
     } else
-        println("Value matching key $key not found in array. Comparisons done: $comparisonCount")
+        return "Value matching key $key not found in array. Comparisons done: $comparisonCount"
 }
 
-fun binarySearch(array: IntArray, lowerbound: Int, upperbound: Int, key: Int) {
-    var lowerbound = lowerbound
-    var upperbound = upperbound
+fun binarySearch(array: IntArray, lowerbounde: Int, upperbounde: Int, key: Int): String {
+    var lowerbound = lowerbounde
+    var upperbound = upperbounde
     // Int to keep track of comparisons needed
     var comparisonCount = 1
     // Starts checking at centermost position
@@ -63,7 +63,7 @@ fun binarySearch(array: IntArray, lowerbound: Int, upperbound: Int, key: Int) {
         position = (lowerbound + upperbound) / 2
     }
     if (lowerbound <= upperbound) {
-        println("Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount")
+        return "Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount"
     } else
-        println("Value matching key $key not found in given section of array. Comparisons done: $comparisonCount")
+        return "Value matching key $key not found in given section of array. Comparisons done: $comparisonCount"
 }
