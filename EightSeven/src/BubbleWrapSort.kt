@@ -25,7 +25,7 @@ fun main() {
                     swapped = true
                 }
             } catch (e: ArrayIndexOutOfBoundsException) {
-                continue
+                break
             }
         }
         // Checks to see if any swaps were made this iteration. If not, then the sort is complete and the loop can break
