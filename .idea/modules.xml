@@ -3,15 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Comp and also Sci.iml" filepath="$PROJECT_DIR$/Comp and also Sci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EightEight/EightEight.iml" filepath="$PROJECT_DIR$/EightEight/EightEight.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightFour/EightFour.iml" filepath="$PROJECT_DIR$/EightFour/EightFour.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightOne/EightOne.iml" filepath="$PROJECT_DIR$/EightOne/EightOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EightSeven/EightSeven.iml" filepath="$PROJECT_DIR$/EightSeven/EightSeven.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightThree/EightThree.iml" filepath="$PROJECT_DIR$/EightThree/EightThree.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightTwo/EightTwo.iml" filepath="$PROJECT_DIR$/EightTwo/EightTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenFour/SevenFour.iml" filepath="$PROJECT_DIR$/SevenFour/SevenFour.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenOne/SevenOne.iml" filepath="$PROJECT_DIR$/SevenOne/SevenOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenThree/SevenThree.iml" filepath="$PROJECT_DIR$/SevenThree/SevenThree.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenTwo/SevenTwo.iml" filepath="$PROJECT_DIR$/SevenTwo/SevenTwo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/old/src/old.iml" filepath="$PROJECT_DIR$/old/src/old.iml" />
       <module fileurl="file://$PROJECT_DIR$/old/old.iml" filepath="$PROJECT_DIR$/old/old.iml" />
     </modules>
   </component>
