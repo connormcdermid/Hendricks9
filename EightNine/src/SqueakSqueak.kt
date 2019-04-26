@@ -13,7 +13,7 @@ fun main() {
     when (readLine()!!) {
         "1" -> one()
         "2" -> two()
-
+        "3" -> three()
         "quit" -> exitProcess(0)
     }
     main()
@@ -63,4 +63,51 @@ fun two() {
         1 -> println("1 Oscar found at position $oscarSubscript.")
         else -> println("$oscars Oscars found.")
     }
+}
+
+// Problem 3
+fun three() {
+    // Initializes array with 10 values
+    val computerArray = arrayOf("", "", "", "", "", "", "", "", "", "")
+    // Asks user for 10 computer terms
+    for (i in 0 until 10) {
+        print("\nEnter a computer term: ")
+        computerArray[i] = readLine()!!
+    }
+    // Prints array
+    printArray(computerArray)
+    // Sorts array
+    computerArray.sort()
+    // Prints array again
+    printArray(computerArray)
+    // Searches for "mouse"
+    println(binarySearch(computerArray, "Mouse"))
+}
+
+// Binary search for problem 3
+fun binarySearch(array: Array<String>, key: String): String {
+    var lowerbound = 0
+    var upperbound = array.size - 1
+    // Int to keep track of comparisons needed
+    var comparisonCount = 1
+    // Starts checking at centermost position
+    var position = (lowerbound + upperbound) / 2
+    // Checks if value at current position equals key and if
+    while (array[position] != key && lowerbound <= upperbound) {
+        comparisonCount++
+        if (array[position] > key)
+        // If the number is > key, decrease position by one
+        {
+            upperbound = position - 1
+        }
+        // If the number is < key, increases position by one
+        else {
+            lowerbound = position + 1
+        }
+        position = (lowerbound + upperbound) / 2
+    }
+    return if (lowerbound <= upperbound) {
+        "Value matching key $key found in array at subscript $position. Comparisons needed: $comparisonCount"
+    } else
+        "Value matching key $key not found in array. Comparisons done: $comparisonCount"
 }
