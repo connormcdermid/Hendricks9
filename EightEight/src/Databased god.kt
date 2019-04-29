@@ -31,7 +31,7 @@ fun lastNameSort(nameArray: Array<String>, addressArray: Array<String>, cityArra
         var swapped = false
         // Goes through each pair of items in the array and checks if they are in order
         for (i in 0 until nameArray.size) {
-            try {
+            //try {
                 // If the pair is not in alphabetical, it swaps them
                 if (nameArray[i].substringAfter(' ') > nameArray[i + 1].substringAfter(' ')) {
                     // Swaps around the nameArray
@@ -49,11 +49,11 @@ fun lastNameSort(nameArray: Array<String>, addressArray: Array<String>, cityArra
                     // Sets swapped to true to keep track of swaps
                     swapped = true
                 }
-            }
+            //}
             // Catches exception thrown when at the end of the array.
-            catch (e: ArrayIndexOutOfBoundsException) {
-                break
-            }
+            // catch (e: ArrayIndexOutOfBoundsException) {
+            //    break
+            //}
         }
         // Checks to see if any swaps were made this iteration. If not, then the sort is complete and the loop can break
         if (!swapped)
