@@ -22,7 +22,7 @@ fun main() {
                 customers[i][5] = "$$feesDue"
             }
     // Prints users by their identification numbers
-    bubbleSort()
+    // bubbleSort()
 }
 
 fun bubbleSort(coolArray: Array <Array <String>>) {
@@ -37,9 +37,9 @@ fun bubbleSort(coolArray: Array <Array <String>>) {
             try {
                 // If the pair is not in the order of i > i + 1, it swaps them
                 if (coolArray[2][i] < coolArray[2][i + 1]) {
-                    bubbleBuffer = coolArray[i + 1]
+                    // bubbleBuffer = coolArray[i + 1]
                     coolArray[i + 1] = coolArray[i]
-                    coolArray[i] = bubbleBuffer
+                    // coolArray[i] = bubbleBuffer
                     swapped = true
                 }
             }
@@ -53,5 +53,5 @@ fun bubbleSort(coolArray: Array <Array <String>>) {
             break
     }
     // Prints
-    printArray(coolArray)
+    // printArray(coolArray)
 }
