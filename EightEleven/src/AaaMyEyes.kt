@@ -1,57 +1,77 @@
-fun main() {
-    // Array of customer arrays
-    val customers = arrayOf(arrayOf("Puget Tummalaprogress","000001","421", "5", "14", "$0.00"),
-                            arrayOf("Agranya Ketha", "000002", "420", "5", "3", "$0.00"),
-                            arrayOf("Harish Sundar", "000003", "134", "1", "6", "$0.00"),
-                            arrayOf("Rahul Chauhan", "000004", "102", "5", "2", "$0.00"),
-                            arrayOf("John Wick Fortnite", "000005", "306", "1", "0", "$0.00"),
-                            arrayOf("Jack Tramiel", "000064", "128", "5", "6502", "$0.00"),
-                            arrayOf("Bil Herd", "000128", "128", "1", "1", "$0.00"),
-                            arrayOf("Eyeah Eyeah", "000134", "208", "5", "4", "$0.00"),
-                            arrayOf("Mishovy Silenosti", "000280", "211", "1", "1", "$0.00"),
-                            arrayOf("Amphibious Reptile", "000291", "202", "5", "4", "$0.00"),
-                            arrayOf("Carrot", "000333", "502", "5", "3", "$0.00"))
-    // Checks through the array for those who have overdue rentals and calculates late fees
-    for (i in 0 until customers.size)
-        if (customers[i][4] > customers[i][3])
-            if (customers[i][3] == "1") {
-                val feesDue = customers[i][4].toInt()*1.49
-                customers[i][5] = "$$feesDue"
-            } else if (customers[i][3] == "5") {
-                val feesDue = customers[i][4].toInt()*0.69
-                customers[i][5] = "$$feesDue"
-            }
-    // Prints users by their identification numbers
-    // bubbleSort()
-}
+/*
+  author: Frank Gomes
+  lab: 8.11 Project Eyeball Video
+  date: 27-04-19
+  extra: Prints list of on-time customers
+ */
 
-fun bubbleSort(coolArray: Array <Array <String>>) {
-    // Temporary buffer for storing the value of the position after the one being compared
-    var bubbleBuffer: String
-    // While loop that iterates until the array is sorted
-    // A boolean that tracks whether there has been a swap in the iteration of the loop
-    while (true) {
-        var swapped = false
-        // Goes through each pair of items in the array and checks if they are in order
-        for (i in 0 until coolArray.size) {
-            try {
-                // If the pair is not in the order of i > i + 1, it swaps them
-                if (coolArray[2][i] < coolArray[2][i + 1]) {
-                    // bubbleBuffer = coolArray[i + 1]
-                    coolArray[i + 1] = coolArray[i]
-                    // coolArray[i] = bubbleBuffer
-                    swapped = true
+import java.util.Arrays
+import java.util.Comparator
+import kotlin.system.exitProcess
+
+fun main() {
+    val people = arrayOfNulls<Person>(10)
+    val customers = arrayOf(
+            arrayOf("Tummalaprogress, Puget","000001","421", "5", "14"),
+            arrayOf("Ketha, Agranya", "000002", "420", "5", "3"),
+            arrayOf("Sundar, Harish", "000003", "134", "1", "6"),
+            arrayOf("Chauhan, Rahul", "000004", "102", "5", "2"),
+            arrayOf("Wick, John", "000005", "306", "1", "0"),
+            arrayOf("Tramiel, Jack", "000064", "128", "5", "6502"),
+            arrayOf("Herd, Bil", "000128", "128", "1", "1"),
+            arrayOf("Eyeah, Eyeah", "000134", "208", "5", "4"),
+            arrayOf("Silenosti, Mishovy", "000280", "211", "1", "1"),
+            arrayOf("Reptile, Amphibious", "000291", "202", "5", "4"),
+            arrayOf("Shibe, Carrot", "000333", "502", "5", "3"))
+    for (i in 0..9) {
+        people[i] = Person()
+        for (arr in customers) {
+            for (j in 0..4) {
+                when (j) {
+                    0 -> people[i]!!.name = arr[j]
+                    1 -> people[i]!!.customerID = Integer.parseInt(arr[j])
+                    2 -> people[i]!!.movie = Integer.parseInt(arr[j])
+                    3 -> people[i]!!.code = Integer.parseInt(arr[j])
+                    4 -> people[i]!!.day = Integer.parseInt(arr[j])
+                    else -> {
+                        println("An error has occurred.")
+                        exitProcess(-1)
+                    }
                 }
             }
-            // Catches exception thrown when at the end of the array.
-            catch (e: ArrayIndexOutOfBoundsException) {
-                break
-            }
         }
-        // Checks to see if any swaps were made this iteration. If not, then the sort is complete and the loop can break
-        if (!swapped)
-            break
     }
-    // Prints
-    // printArray(coolArray)
+
+    //Process data:
+    var counter = 0
+    for (person in people) {
+        if (person!!.isLate) {
+            counter++
+        }
+    }
+    println("$counter overdue customers.")
+    val comp = Comparator.comparingInt<Person> { o -> o.customerID }
+    Arrays.sort<Person>(people, comp)
+    println("People who are late:")
+    for (person in people) {
+        if (person!!.isLate) {
+            println(person.name)
+        }
+    }
+    println("Customers on time:")
+    for (person in people) {
+        if (!person!!.isLate) {
+            println(person.name)
+        }
+    }
+}
+
+internal class Person {
+    var name: String? = null
+    var customerID: Int = 0
+    var movie: Int = 0
+    var code: Int = 0
+    var day: Int = 0
+    val isLate: Boolean
+        get() = day > code
 }
