@@ -1,3 +1,10 @@
+/*
+  author: Frank Gomes
+  lab: 8.12 Worksheet Banners
+  date: 30-04-19
+  extra: Randomly chooses between Keanu Reeves and Carrie-Ann Moss
+ */
+
 import kotlin.random.Random
 
 fun main() {
@@ -17,13 +24,24 @@ fun main() {
             3 -> println("Knock, knock, Neo.")
         }
     }
-
+    // Randomly decides between the two actors
     val randomGenerator = Random
-    val actor: String
-    if (randomGenerator.nextInt(11) > 5) {
-        actor = "Keanu Reeves"
+    val actor = if (randomGenerator.nextInt(11) > 5) {
+        "Keanu Reeves"
     } else {
-        actor = "Carrie-Ann Moss"
+        "Carrie-Ann Moss"
     }
+    // Prints last name, a comma, and then the first name.
     println(actor.substringAfter(' ') + ", " + actor.substringBefore(' '))
+    println("=====================\n" +
+            "|  0      O      o  |\n" +
+            "| /|\\    /|\\    /|\\ |\n" +
+            "| /'\\    /'\\    /|\\ |\n" +
+            "|  the matrix again |\n" +
+            "=====================\n")
+    // Array of names, as specified in the worksheet
+    val nameArray = arrayOf("Neo", "Morpheus", "Trinity", "Smith", "Mouse", "Cypher")
+    // Sorts array of names
+    nameArray.sort()
+    println(nameArray.toList())
 }
