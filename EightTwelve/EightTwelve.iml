@@ -10,5 +10,7 @@
     <orderEntry type="library" name="KotlinJavaRuntime (10)" level="project" />
     <orderEntry type="library" name="McDermid's Database" level="project" />
     <orderEntry type="library" name="src" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
