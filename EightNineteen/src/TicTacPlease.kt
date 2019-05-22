@@ -1,3 +1,10 @@
+/*
+  author: Frank Gomes
+  lab: 8.19 Tic-Tac-Toe
+  date: 17-05-19
+  extra: Computer that randomly moves
+ */
+
 import kotlin.system.exitProcess
 
 // Array for grid
@@ -74,20 +81,18 @@ fun playerWin(): Boolean {
 
 // Computer's random moves
 fun computerMove() {
-    // If the computer hasn't moved yet, makes a random move
-    if (!grid[0].contains('O') && !grid[1].contains('O') && !grid[2].contains('O')) {
-        while (true) {
-            val randomRow = (0..2).random()
-            val randomColumn = (0..2).random()
-            // Checks if randomly selected space is empty, and if it is, moves there
-            if (grid[randomRow][randomColumn] == ' '){
-                grid[randomRow][randomColumn] = 'O'
-                // Stops random selection from reoccurring
-                break
-            }
+    // Random move
+    while (true) {
+        val randomRow = (0..2).random()
+        val randomColumn = (0..2).random()
+        // Checks if randomly selected space is empty, and if it is, moves there
+        if (grid[randomRow][randomColumn] == '\u0000'){
+            grid[randomRow][randomColumn] = 'O'
+            // Stops random selection from reoccurring
+            break
         }
-        return
     }
+    return
 }
 
 // Checks if the computer won
