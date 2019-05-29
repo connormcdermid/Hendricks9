@@ -1,3 +1,10 @@
+/*
+  author: Frank Gomes
+  lab: 8.15 Project Deadly Desert Map
+  date: 08-05-19
+  extra: Prints hotspots in red
+ */
+
 fun main() {
     // Grid of snake sightings
     val grid = arrayOf(
@@ -11,11 +18,15 @@ fun main() {
     // Prints original grid
     gridPrinter(grid)
     // Prints marked grid
-    gridPrinter(hotspotScanVerbose(grid))
+    gridPrinter(hotspotScan(grid))
 }
 
 fun hotspotScan (grid: Array<Array<String>>): Array<Array<String>> {
-    var grid2 = grid.copyOf()
+    // Deep copy of grid to modify
+    var grid2 = Array(6){Array(8){""}}
+    for (i in grid.indices)
+        for (j in grid[i].indices)
+            grid2[i][j] = grid[i][j]
     // Sum of number at place in grid & any adjacent places for determining whether or not the spot is a hotspot
     for (i in grid.indices) {
         for (j in grid[i].indices) {
@@ -36,48 +47,13 @@ fun hotspotScan (grid: Array<Array<String>>): Array<Array<String>> {
                 sum += grid[i+1][j].toInt()
             // Checks if total sum of the numbers around the current position & the current position"s value is greater than 15, making it a "hotspot"
             if (sum > 15)
-                grid2[i][j] = "d"
+                grid2[i][j] = "\u001b[31mD\u001b[0m"
         }
     }
     return grid2
 }
 
-fun hotspotScanVerbose (grid: Array<Array<String>>): Array<Array<String>> {
-    var grid2 = grid.copyOf()
-    for (i in grid.indices) {
-        for (j in grid[i].indices) {
-            // Sum of number at place in grid & any adjacent places for determining whether or not the spot is a hotspot
-            var sum = 0
-            // Adds current position to the sum
-            sum += grid[i][j].toInt()
-            // Checks if the place left of the current position exists, and if it does, adds it
-            if (j != 0) {
-                println("Left event triggered at $i,$j, sum $sum")
-                sum += grid[i][j - 1].toInt()
-            }
-            // Checks if place right of the current position exists, and if it does, adds it
-            if (j != grid[i].size - 1) {
-                println("Right event triggered at $i,$j, sum $sum")
-                sum += grid[i][j + 1].toInt()
-            }
-            // Checks if place above the current position exists, and if it does, adds it
-            if (i != 0) {
-                println("Above event triggered at $i,$j, sum $sum")
-                sum += grid[i - 1][j].toInt()
-            }
-            // Checks if place below the current position exists, and if it does, adds it
-            if (i != grid.size - 1) {
-                println("Below event triggered at $i,$j, sum $sum")
-                sum += grid[i + 1][j].toInt()
-            }
-            // Checks if total sum of the numbers around the current position & the current position"s value is greater than 15, making it a "hotspot"
-            if (sum > 15)
-                grid2[i][j] = "d"
-        }
-    }
-    return grid2
-}
-
+// Prints grids
 fun gridPrinter (grid: Array<Array<String>>) {
     print("\n________________\n")
     for (i in grid.indices) {
