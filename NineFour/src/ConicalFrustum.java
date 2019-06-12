@@ -1,3 +1,10 @@
+/*
+  author: Frank Gomes
+  lab: 9.4 3-D Drawings
+  date: 12-06-19
+  extra: Oblique Cylinder
+ */
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -56,8 +63,24 @@ class ConicalFrustum extends JPanel {
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
         // Drawings go here!
-
-        g.drawOval();
+        Graphics2D g2 = (Graphics2D) g;
+        // Right cylinder
+        g2.setColor(Color.BLUE);
+        g2.setStroke(new BasicStroke(4));
+        g2.drawOval(0,0,65,20);
+        g2.drawLine(0,10,0,70);
+        g2.drawLine(65,10,65,70);
+        g2.drawOval(0,65,65,20);
+        // Conical frustum
+        g2.drawOval(70,0,65,20);
+        g2.drawLine(70,10,75,70);
+        g2.drawLine(135,10,130,70);
+        g2.drawOval(75,65,55,20);
+        // Oblique cylinder
+        g2.drawOval(140,0,65,20);
+        g2.drawLine(140,10,150,70);
+        g2.drawLine(205,10,215,70);
+        g2.drawOval(150,65,65,20);
     }
 }
 
@@ -75,7 +98,7 @@ class Main {
         // JFrame for the third problem
         JFrame problemThree = new JFrame("Fancy name for a glass");
         problemThree.add(new ConicalFrustum());
-        // TODO size
+        problemThree.setSize(300,180);
         // Makes the program exit when you close the windows
         problemOne.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); problemTwo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); problemThree.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Centers the windows on the screen
