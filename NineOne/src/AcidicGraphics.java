@@ -97,7 +97,7 @@ class ProblemTwo extends JPanel {
 
 class ProblemThree extends JPanel {
     // For telling the panel to be repainted at regular intervals
-    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+    private ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 
     int colorCounter = 0;
     boolean backwardsPulse = false;
