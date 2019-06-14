@@ -64,3 +64,96 @@ class ItsAFeature extends JPanel {
         f.setVisible(true);
     }
 }
+
+class SoundOfTheSea extends JPanel {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Drawings go here!
+        for (int i = 100; i > 0; i-=20) {
+            g.setColor(new Color(102,160,255));
+            g.fillOval(100-i,100-i,i,i);
+            g.setColor(Color.BLACK);
+            g.drawOval(100-i,100-i,i,i);
+        }
+    }
+
+    public static void main(String[] args) {
+        // New JFrame with funny title
+        JFrame f = new JFrame("woooosh");
+        // Adds class to JFrame
+        f.add(new SoundOfTheSea());
+        // Sets size of JFrame
+        f.setSize(150,150);
+        // Makes program close when window is closed
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Centers window
+        f.setLocationRelativeTo(null);
+        // Makes the JFrame visible
+        f.setVisible(true);
+    }
+}
+
+class Trees extends JPanel {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Drawings go here!
+        g.setColor(Color.GREEN);
+        for (int i = 0; i < 100; i+=20)
+            g.drawPolygon(new int[] {10, 35, 60}, new int[] {i+50, i, i+50}, 3);
+        g.setColor(new Color(76,52,52));
+        g.fillRect(25,130,20,30);
+    }
+
+    public static void main(String[] args) {
+        // New JFrame with funny title
+        JFrame f = new JFrame("Trees!");
+        // Adds class to JFrame
+        f.add(new Trees());
+        // Sets size of JFrame
+        f.setSize(40,200);
+        // Makes program close when window is closed
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Centers window
+        f.setLocationRelativeTo(null);
+        // Makes the JFrame visible
+        f.setVisible(true);
+    }
+}
+
+class ExtraGum extends JPanel {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Drawings go here!
+        // Graphics2D object
+        Graphics2D g2 = (Graphics2D) g;
+        // Sets color to mint green
+        g2.setColor(Color.GREEN);
+        g2.setStroke(new BasicStroke(2));
+        // Wrapper
+        Polygon basePoly = new Polygon(new int[] {32, 405, 456, 83}, new int[] {354, 164, 264, 454}, 4);
+        g2.drawPolygon(basePoly);
+        // Foil wrapper
+        g2.setColor(new Color(128,128,128));
+        Polygon foilWrapper = new Polygon(new int[] {565, 615, 457, 406}, new int[] {83, 182, 263, 164}, 4);
+        g2.fillPolygon(foilWrapper);
+        // Text
+        g2.setColor(new Color(146,255,110));
+        g2.setStroke(new BasicStroke(5));
+        g2.drawLine(150,315,175,356);
+    }
+
+    public static void main(String[] args) {
+        // New JFrame with funny title
+        JFrame f = new JFrame("Hey, you got some gum?");
+        // Adds class to JFrame
+        f.add(new ExtraGum());
+        // Sets size of JFrame
+        f.setSize(642,511);
+        // Makes program close when window is closed
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Centers window
+        f.setLocationRelativeTo(null);
+        // Makes the JFrame visible
+        f.setVisible(true);
+    }
+}
