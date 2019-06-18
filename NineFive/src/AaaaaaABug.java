@@ -1,3 +1,10 @@
+/*
+  author: Frank Gomes
+  lab: 9.5 Repetitive Drawings
+  date: 18-06-19
+  extra: Hey, you got some gum?
+ */
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -138,8 +145,8 @@ class ExtraGum extends JPanel {
         g2.fillPolygon(foilWrapper);
         // Text
         g2.setColor(new Color(146,255,110));
-        g2.setStroke(new BasicStroke(5));
-        g2.drawLine(150,315,175,356);
+        g2.setFont(new Font("Helvetica", Font.BOLD, 48));
+        g2.drawString("gum",100,380);
     }
 
     public static void main(String[] args) {
