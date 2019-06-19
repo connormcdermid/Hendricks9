@@ -147,6 +147,7 @@ class ExtraGum extends JPanel {
         g2.setColor(new Color(146,255,110));
         g2.setFont(new Font("Helvetica", Font.BOLD, 48));
         g2.drawString("gum",100,380);
+        g2.drawLine(171,369,175,356);
     }
 
     public static void main(String[] args) {
