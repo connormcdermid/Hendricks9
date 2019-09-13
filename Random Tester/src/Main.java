@@ -24,28 +24,25 @@ public class Main {
         while (scan.hasNextLine()) {
             people.add(scan.nextLine());
         }
-        /* List<String> original = new ArrayList<>(people);
+        // Shuffle up the list
         Collections.shuffle(people);
-        for (int i = 0; i < people.size(); i++) {
-            if (people.get(i).equals(original.get(i)))
-                Collections.shuffle(people);
-        }
-        for (int i = 0; i < people.size(); i++)
-            System.out.printf("%s & %s\n", people.get(i), original.get(i)); */
-        // Randomizes list
-        // Collections.shuffle(people);
         // Checks if the list has an odd amount of names, if so splits the last three off for a round robin
         if (people.size() % 2 == 1) {
+            System.out.println("Group of three:");
             System.out.printf("%s & %s & %s\n", people.get(people.size()-1), people.get(people.size()-2), people.get(people.size()-3));
             // Remove the last three to stop them from being paired again
             people.remove(people.size() - 3);
             people.remove(people.size() - 2);
             people.remove(people.size() - 1);
         }
-        // Split the list into two lists of unique names
-        List<String> half1 = people.subList(0, (people.size()-1)/2);
-        List<String> half2 = people.subList((people.size()-1)/2+1,people.size());
-        for (int i = 0; i < half1.size(); i++)
-            System.out.printf("%s & %s\n", half1.get(i), half2.get(i));
+        // Pairs the last half of the list with the first half of the list
+        System.out.println("\nTester | Coder");
+        for (int i = 0; i < people.size() / 2; i++)
+            System.out.printf("%s & %s\n", people.get(i), people.get(people.size() - 1 - i));
+        // Re-rolls for to pair again
+        Collections.shuffle(people);
+        System.out.println("\nCoder | Tester");
+        for (int i = 0; i < people.size() / 2; i++)
+            System.out.printf("%s & %s\n", people.get(i), people.get(people.size() - 1 - i));
     }
 }

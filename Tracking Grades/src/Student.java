@@ -1,3 +1,11 @@
+/*
+  author: Frank Gomes
+  lab: Tracking Grades
+  date: 12-09-19
+  extra: toLetter(), which returns a letter grade
+ */
+
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 class Student {
@@ -7,8 +15,11 @@ class Student {
     private double test2;
     private double average;
 
+    // DecimalFormat to remove extra zeroes
+    private DecimalFormat df = new DecimalFormat("0.##");
+
     // Constructor
-    Student(String studentName) {this.name = studentName;}
+    Student(String studentName) {name = studentName;}
 
     void inputGrades() {
         // Scanner for user input
@@ -16,17 +27,24 @@ class Student {
         // Get test 1 grade
         System.out.println("Enter grade for test 1: ");
         // Test 1 grade
-        this.test1 = kbd.nextDouble();
+        test1 = kbd.nextDouble();
         // Get test 2 grade
         System.out.println("Enter grade for test 2: ");
         // Test 2 grade
-        this.test2 = kbd.nextDouble();
+        test2 = kbd.nextDouble();
         // Calculate average and round to two decimal places
-        this.average = Math.round((test1 + test2)/2*100.0)/100.0;
+        average = Math.round((test1 + test2)/2*100.0)/100.0;
+    }
+
+    // Input the grades using arguments instead of prompts
+    void inputGrades(double grade1, double grade2) {
+        test1 = grade1;
+        test2 = grade2;
+        average = Math.round((test1 + test2)/2*100.0)/100.0;
     }
 
     // Print student's name and average
-    void printAverage() {System.out.printf("%s's average: %f", name, average);}
+    void printAverage() {System.out.printf("%s's average: %s", name, df.format(average));}
 
     // Return average as a double
     double getAverage() {return average;}
@@ -50,6 +68,6 @@ class Student {
 
     // Return student overview and info
     public String toString() {
-        return String.format("Name: %s, Test 1: %f, Test 2: %f, Average: %f", name, test1, test2, (test1+test2)/2);
+        return String.format("Name: %s, Test 1: %s, Test 2: %s, Average: %s", name, df.format(test1), df.format(test2), df.format((test1+test2)/2));
     }
 }
