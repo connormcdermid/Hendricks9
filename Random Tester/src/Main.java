@@ -9,6 +9,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(@NotNull String[] args) {
+        // Ask user to sort by coder or tester
+        System.out.println("Would you like to sort by coder or tester? (c/t) ");
+        Scanner kbd = new Scanner(System.in);
+        char choice = kbd.next().charAt(0);
         // Scanner to read names from file
         Scanner scan = null;
         // Make the scanner read the file, and if it doesn't exist quit with code 404
@@ -38,8 +42,15 @@ public class Main {
         // Pairs the last half of the list with the first half of the list
         List<String> half1 = people.subList(0,people.size()/2-1);
         List<String> half2 = people.subList(people.size()/2, people.size()-1);
-        Collections.sort(half1);
-        Collections.sort(half2);
+        // Sort by coder or tester, depending on user's choice
+        switch (choice) {
+            case 't':
+                Collections.sort(half1);
+                break;
+            case 'c':
+                Collections.sort(half2);
+                break;
+        }
         // Print out pairs
         System.out.println("\nTester | Coder");
         for (int i = 0; i < half1.size(); i++)
