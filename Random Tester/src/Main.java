@@ -36,13 +36,13 @@ public class Main {
             people.remove(people.size() - 1);
         }
         // Pairs the last half of the list with the first half of the list
+        List<String> half1 = people.subList(0,people.size()/2-1);
+        List<String> half2 = people.subList(people.size()/2, people.size()-1);
+        Collections.sort(half1);
+        Collections.sort(half2);
+        // Print out pairs
         System.out.println("\nTester | Coder");
-        for (int i = 0; i < people.size() / 2; i++)
-            System.out.printf("%s & %s\n", people.get(i), people.get(people.size() - 1 - i));
-        // Re-rolls for to pair again
-        Collections.shuffle(people);
-        System.out.println("\nCoder | Tester");
-        for (int i = 0; i < people.size() / 2; i++)
-            System.out.printf("%s & %s\n", people.get(i), people.get(people.size() - 1 - i));
+        for (int i = 0; i < half1.size(); i++)
+            System.out.printf("%s & %s\n", half1.get(i), half2.get(i));
     }
 }
