@@ -17,7 +17,7 @@ public class Main {
         Scanner scan = null;
         // Make the scanner read the file, and if it doesn't exist quit with code 404
         try {
-            scan = new Scanner(new File("Random Tester/in/" + args[0]));
+            scan = new Scanner(new File("Random Tester/" + args[0]));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(404);
