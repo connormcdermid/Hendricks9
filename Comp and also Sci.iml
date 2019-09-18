@@ -4,6 +4,43 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/CarLab" />
+      <excludeFolder url="file://$MODULE_DIR$/EightEight" />
+      <excludeFolder url="file://$MODULE_DIR$/EightEighteen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightEleven" />
+      <excludeFolder url="file://$MODULE_DIR$/EightFifteen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightFive" />
+      <excludeFolder url="file://$MODULE_DIR$/EightFour" />
+      <excludeFolder url="file://$MODULE_DIR$/EightNine" />
+      <excludeFolder url="file://$MODULE_DIR$/EightNineteen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightOne" />
+      <excludeFolder url="file://$MODULE_DIR$/EightSeven" />
+      <excludeFolder url="file://$MODULE_DIR$/EightSix" />
+      <excludeFolder url="file://$MODULE_DIR$/EightSixteen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightThirteen" />
+      <excludeFolder url="file://$MODULE_DIR$/EightThree" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTwelve" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTwenty" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTwentyOne" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTwentyTwo" />
+      <excludeFolder url="file://$MODULE_DIR$/EightTwo" />
+      <excludeFolder url="file://$MODULE_DIR$/NineFive" />
+      <excludeFolder url="file://$MODULE_DIR$/NineFour" />
+      <excludeFolder url="file://$MODULE_DIR$/NineOne" />
+      <excludeFolder url="file://$MODULE_DIR$/NineThree" />
+      <excludeFolder url="file://$MODULE_DIR$/NineTwo" />
+      <excludeFolder url="file://$MODULE_DIR$/One" />
+      <excludeFolder url="file://$MODULE_DIR$/Random Tester" />
+      <excludeFolder url="file://$MODULE_DIR$/SevenFour" />
+      <excludeFolder url="file://$MODULE_DIR$/SevenOne" />
+      <excludeFolder url="file://$MODULE_DIR$/SevenThree" />
+      <excludeFolder url="file://$MODULE_DIR$/SevenTwo" />
+      <excludeFolder url="file://$MODULE_DIR$/Television" />
+      <excludeFolder url="file://$MODULE_DIR$/Tracking Grades" />
+      <excludeFolder url="file://$MODULE_DIR$/Two" />
+      <excludeFolder url="file://$MODULE_DIR$/lib" />
+      <excludeFolder url="file://$MODULE_DIR$/old" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
