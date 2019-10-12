@@ -47,6 +47,10 @@ class Television {
         this.power = power;
     }
 
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
     // Object constructor
     public Television(String manufacturer, float screenSize) {
         brand = manufacturer;

@@ -1,3 +1,10 @@
+/*
+* Name: Frank Gomes
+* Lab: Rational Lab
+* Date: 12-10-19
+* Extra: subtraction
+*/
+
 class Rational {
     // Values of the fraction
     private int num;
@@ -26,7 +33,7 @@ class Rational {
 
     // Comparisons
 
-    boolean isEqual(Rational compare) {
+    boolean equals(Rational compare) {
         // Scale the two numerators to a common denominator
         int num1 = num * compare.getDenominator();
         int num2 = compare.getNumerator() * den;
@@ -65,6 +72,15 @@ class Rational {
         int commonDen = den * subtract.getDenominator();
         // Simplify
         return simplify(new Rational(numSum, commonDen));
+    }
+
+    Rational simplify() {
+        if (num == 0)
+            return this;
+        if (den == 0)
+            throw new IllegalArgumentException("Supplied denominator was zero.");
+        int gcf = GCF(den, num);
+        return new Rational(num/gcf, den/gcf);
     }
 
     Rational simplify(Rational r) {
