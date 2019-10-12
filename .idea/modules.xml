@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CarLab/CarLab.iml" filepath="$PROJECT_DIR$/CarLab/CarLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarLabAgain/CarLabAgain.iml" filepath="$PROJECT_DIR$/CarLabAgain/CarLabAgain.iml" />
       <module fileurl="file://$PROJECT_DIR$/Comp and also Sci.iml" filepath="$PROJECT_DIR$/Comp and also Sci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CookieJarLab/CookieJarLab.iml" filepath="$PROJECT_DIR$/CookieJarLab/CookieJarLab.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightEight/EightEight.iml" filepath="$PROJECT_DIR$/EightEight/EightEight.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightEighteen/EightEighteen.iml" filepath="$PROJECT_DIR$/EightEighteen/EightEighteen.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightEleven/EightEleven.iml" filepath="$PROJECT_DIR$/EightEleven/EightEleven.iml" />
@@ -22,6 +24,8 @@
       <module fileurl="file://$PROJECT_DIR$/EightTwentyOne/EightTwentyOne.iml" filepath="$PROJECT_DIR$/EightTwentyOne/EightTwentyOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightTwentyTwo/EightTwentyTwo.iml" filepath="$PROJECT_DIR$/EightTwentyTwo/EightTwentyTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/EightTwo/EightTwo.iml" filepath="$PROJECT_DIR$/EightTwo/EightTwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Employee Lab/Employee Lab.iml" filepath="$PROJECT_DIR$/Employee Lab/Employee Lab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MonsterLab/MonsterLab.iml" filepath="$PROJECT_DIR$/MonsterLab/MonsterLab.iml" />
       <module fileurl="file://$PROJECT_DIR$/NineFive/NineFive.iml" filepath="$PROJECT_DIR$/NineFive/NineFive.iml" />
       <module fileurl="file://$PROJECT_DIR$/NineFour/NineFour.iml" filepath="$PROJECT_DIR$/NineFour/NineFour.iml" />
       <module fileurl="file://$PROJECT_DIR$/NineOne/NineOne.iml" filepath="$PROJECT_DIR$/NineOne/NineOne.iml" />
@@ -29,6 +33,7 @@
       <module fileurl="file://$PROJECT_DIR$/NineTwo/NineTwo.iml" filepath="$PROJECT_DIR$/NineTwo/NineTwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/One/One.iml" filepath="$PROJECT_DIR$/One/One.iml" />
       <module fileurl="file://$PROJECT_DIR$/Random Tester/Random Tester.iml" filepath="$PROJECT_DIR$/Random Tester/Random Tester.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RationalLab/RationalLab.iml" filepath="$PROJECT_DIR$/RationalLab/RationalLab.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenFour/SevenFour.iml" filepath="$PROJECT_DIR$/SevenFour/SevenFour.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenOne/SevenOne.iml" filepath="$PROJECT_DIR$/SevenOne/SevenOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/SevenThree/SevenThree.iml" filepath="$PROJECT_DIR$/SevenThree/SevenThree.iml" />
